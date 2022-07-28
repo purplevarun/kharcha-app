@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ScrollView, Text } from "react-native";
 import getItem from "../../helpers/getItem";
 import saveItem from "../../helpers/saveItem";
+import AllTrips from "../../major-components/alltrips/AllTrips";
 import AddButton from "../../minor-components/addbtn/AddButton";
 import Input from "../../minor-components/input/Input";
 import TodaysDate from "../../minor-components/todaysdate/TodaysDate";
@@ -15,7 +16,7 @@ const HomeScreen = () => {
 	const handleSubmit = async () => {
 		const newTrip = {
 			name: text,
-			date: new Date().toLocaleString(),
+			created: new Date().toLocaleString(),
 		};
 		await saveItem("trips", newTrip);
 		setText("");
@@ -39,7 +40,7 @@ const HomeScreen = () => {
 				<AddButton btnText="Add Trip" onPress={handlePress} disabled={false} />
 			)}
 
-			<Text>HomeScreen</Text>
+			<AllTrips />
 		</ScrollView>
 	);
 };

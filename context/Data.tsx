@@ -1,5 +1,7 @@
+import { useState } from "react";
+
 const Data = () => {
-	const name = "Varun";
-	return { name };
+	const [title, setTitle] = useState("Home");
+	return { title, setTitle };
 };
 export default Data;
