@@ -5,6 +5,7 @@ interface Props {
 	text: string;
 	setText: (newText: string) => void;
 	handleSubmit: () => void;
+	placeholder: string;
 }
 
 const Input = (props: Props) => {
@@ -29,7 +30,7 @@ const Input = (props: Props) => {
 				}}
 				value={props.text}
 				onChangeText={(newText) => props.setText(newText)}
-				placeholder="Trip Name"
+				placeholder={props.placeholder}
 			/>
 			<AddButton
 				btnText="Submit"

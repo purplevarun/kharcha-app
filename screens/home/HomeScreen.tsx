@@ -23,7 +23,7 @@ const HomeScreen = () => {
 		setInput(false);
 		console.log("trips = ", await getItem("trips"));
 	};
-	const inputProps = { text, setText, handleSubmit };
+	const inputProps = { text, setText, handleSubmit, placeholder: "Trip Name" };
 	return (
 		<ScrollView
 			keyboardShouldPersistTaps="always"
