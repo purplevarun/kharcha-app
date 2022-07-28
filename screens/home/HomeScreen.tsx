@@ -10,7 +10,8 @@ const HomeScreen = () => {
 		setInput((input) => !input);
 	};
 	const [text, setText] = useState("");
-	const inputProps = { text, setText };
+	const handleSubmit = async () => {};
+	const inputProps = { text, setText, handleSubmit };
 	return (
 		<ScrollView
 			keyboardShouldPersistTaps="always"
@@ -21,8 +22,12 @@ const HomeScreen = () => {
 			}}
 		>
 			<TodaysDate />
-			{!input && <AddButton btnText="Add Trip" onPress={handlePress} />}
-			{input && <Input {...inputProps} />}
+			{input ? (
+				<Input {...inputProps} />
+			) : (
+				<AddButton btnText="Add Trip" onPress={handlePress} disabled={false} />
+			)}
+
 			<Text>HomeScreen</Text>
 		</ScrollView>
 	);
