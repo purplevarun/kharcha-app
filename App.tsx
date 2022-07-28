@@ -1,11 +1,13 @@
-import { Text, View } from "react-native";
-import Buffer from "./components/buffer/Buffer";
+import { NavigationContainer } from "@react-navigation/native";
+import AppContainer from "./container/AppContainer";
+import ContextProvider from "./context/ContextProvider";
 const App = () => {
 	return (
-		<View style={{ height: "100%", alignItems: "center" }}>
-			<Buffer />
-			<Text>Hello World</Text>
-		</View>
+		<ContextProvider>
+			<NavigationContainer>
+				<AppContainer />
+			</NavigationContainer>
+		</ContextProvider>
 	);
 };
 export default App;
