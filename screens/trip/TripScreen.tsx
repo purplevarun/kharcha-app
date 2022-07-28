@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ScrollView, View } from "react-native";
 import saveItem from "../../helpers/saveItem";
+import AllExpenses from "../../major-components/allexpenses/AllExpenses";
 import AddButton from "../../minor-components/addbtn/AddButton";
 import Input2 from "../../minor-components/input/Input2";
 
@@ -62,6 +63,7 @@ const TripScreen = (props: Props) => {
 					disabled={false}
 				/>
 			)}
+			<AllExpenses tripName={tripName} />
 		</ScrollView>
 	);
 };
