@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { ScrollView, Text } from "react-native";
-import getItem from "../../helpers/getItem";
+import { ScrollView } from "react-native";
 import saveItem from "../../helpers/saveItem";
 import AllTrips from "../../major-components/alltrips/AllTrips";
 import AddButton from "../../minor-components/addbtn/AddButton";
@@ -21,7 +20,6 @@ const HomeScreen = () => {
 		await saveItem("trips", newTrip);
 		setText("");
 		setInput(false);
-		console.log("trips = ", await getItem("trips"));
 	};
 	const inputProps = { text, setText, handleSubmit, placeholder: "Trip Name" };
 	return (

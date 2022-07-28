@@ -1,9 +1,19 @@
 import { useState } from "react";
 import { ScrollView, View } from "react-native";
+import saveItem from "../../helpers/saveItem";
 import AddButton from "../../minor-components/addbtn/AddButton";
 import Input2 from "../../minor-components/input/Input2";
 
-const TripScreen = () => {
+interface Props {
+	route: {
+		params: {
+			tripName: string;
+		};
+	};
+}
+
+const TripScreen = (props: Props) => {
+	const tripName = props.route.params.tripName;
 	const [input, setInput] = useState(false);
 	const handlePress = () => {
 		setInput((input) => !input);
@@ -14,8 +24,13 @@ const TripScreen = () => {
 		const newExpense = {
 			created: new Date().toLocaleString(),
 			amount: parseInt(amount),
-			reason: reason,
+			reason,
+			tripName,
 		};
+		await saveItem("expenses", newExpense);
+		setAmount("");
+		setReason("");
+		setInput(false);
 	};
 	const inputProps = {
 		amount,
