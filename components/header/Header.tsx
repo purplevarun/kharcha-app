@@ -1,4 +1,4 @@
-import { FontAwesome5, MaterialIcons } from "@expo/vector-icons";
+import { Entypo, FontAwesome5 } from "@expo/vector-icons";
 import { Text, TouchableOpacity, View } from "react-native";
 
 const Header = () => {
@@ -21,7 +21,7 @@ const Header = () => {
 			</TouchableOpacity>
 			<Text style={{ fontSize: 30 }}>Home</Text>
 			<TouchableOpacity style={{ paddingRight: 30 }}>
-				<MaterialIcons name="menu-book" size={40} color="black" />
+				<Entypo name="info-with-circle" size={40} color="black" />
 			</TouchableOpacity>
 		</View>
 	);
