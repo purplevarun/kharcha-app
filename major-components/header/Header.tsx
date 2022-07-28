@@ -13,7 +13,6 @@ const Header = () => {
 				alignItems: "center",
 				borderBottomColor: "black",
 				borderBottomWidth: 1,
-				marginBottom: 20,
 			}}
 		>
 			<TouchableOpacity style={{ paddingLeft: 20 }}>
