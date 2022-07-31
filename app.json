@@ -22,7 +22,8 @@
 			"adaptiveIcon": {
 				"foregroundImage": "./assets/icon.png",
 				"backgroundColor": "#FFFFFF"
-			}
+			},
+			"package": "com.purplevarun.kharcha"
 		},
 		"web": {
 			"favicon": "./assets/icon.png"
