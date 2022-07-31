@@ -1,7 +1,9 @@
-import { Entypo, FontAwesome5 } from "@expo/vector-icons";
+import { Entypo, FontAwesome, FontAwesome5 } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { Text, TouchableOpacity, View } from "react-native";
+import { useState } from "react";
+import { Linking, Modal, Text, TouchableOpacity, View } from "react-native";
 import useData from "../../context/DataProvider";
+import InfoBox from "../infobox/InfoBox";
 
 const Header = () => {
 	const navigation = useNavigation();
@@ -10,6 +12,9 @@ const Header = () => {
 		navigation.navigate("HomeScreen" as never);
 		setTitle("Home");
 	};
+	const [modal, showModal] = useState(false);
+	const toggleModal = () => showModal((modal) => !modal);
+	const infoProps = { modal, toggleModal };
 	return (
 		<View
 			style={{
@@ -28,8 +33,14 @@ const Header = () => {
 			</TouchableOpacity>
 			<Text style={{ fontSize: 30 }}>{title}</Text>
 			<TouchableOpacity style={{ paddingRight: 30 }}>
-				<Entypo name="info-with-circle" size={40} color="black" />
+				<Entypo
+					name="info-with-circle"
+					size={40}
+					color="black"
+					onPress={toggleModal}
+				/>
 			</TouchableOpacity>
+			<InfoBox {...infoProps} />
 		</View>
 	);
 };
