@@ -4,7 +4,7 @@ import Buffer from "../minor-components/buffer/Buffer";
 const AppContainer = () => {
 	return (
 		<>
-			<Buffer />
+			{/* <Buffer /> */}
 			<Header />
 			<Router />
 		</>
