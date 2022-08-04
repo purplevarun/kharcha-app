@@ -47,7 +47,7 @@ const TripScreen = (props: Props) => {
 			keyboardShouldPersistTaps="always"
 			contentContainerStyle={{
 				alignItems: "center",
-				minHeight: 760,
+				minHeight: 1060,
 				backgroundColor: "white",
 			}}
 		>

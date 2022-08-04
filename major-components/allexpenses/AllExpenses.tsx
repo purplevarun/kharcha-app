@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { ActivityIndicator, Text, View } from "react-native";
 import getItem from "../../helpers/getItem";
 import Expense from "../../minor-components/expense/Expense";
-import Trip from "../../minor-components/trip/Trip";
 
 interface expenseTypes {
 	amount: number;
@@ -28,7 +27,11 @@ const AllExpenses = (props: Props) => {
 	const getSum = () => {
 		if (expenses) {
 			let sum = 0;
-			expenses.forEach((expense) => (sum += expense.amount));
+			expenses.forEach((expense) => {
+				if (expense.tripName === props.tripName) {
+					sum += expense.amount;
+				}
+			});
 			return sum;
 		} else return null;
 	};

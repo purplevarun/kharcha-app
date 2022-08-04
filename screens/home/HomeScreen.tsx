@@ -27,7 +27,7 @@ const HomeScreen = () => {
 			keyboardShouldPersistTaps="always"
 			contentContainerStyle={{
 				alignItems: "center",
-				minHeight: 760,
+				minHeight: 1000,
 				backgroundColor: "white",
 			}}
 		>
