@@ -1,13 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
 import AppContainer from "./container/AppContainer";
-import ContextProvider from "./context/ContextProvider";
 const App = () => {
 	return (
-		<ContextProvider>
-			<NavigationContainer>
-				<AppContainer />
-			</NavigationContainer>
-		</ContextProvider>
+		<NavigationContainer>
+			<AppContainer />
+		</NavigationContainer>
 	);
 };
 export default App;

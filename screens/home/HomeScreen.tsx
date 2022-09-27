@@ -32,11 +32,7 @@ const HomeScreen = () => {
 			}}
 		>
 			<TodaysDate />
-			{input ? (
-				<Input {...inputProps} />
-			) : (
-				<AddButton btnText="Add Trip" onPress={handlePress} disabled={false} />
-			)}
+			{input ? <Input {...inputProps} /> : <AddButton btnText="Add Trip" onPress={handlePress} disabled={false} />}
 
 			<AllTrips />
 		</ScrollView>

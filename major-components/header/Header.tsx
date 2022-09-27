@@ -1,16 +1,13 @@
 import { Entypo, FontAwesome, FontAwesome5 } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
-import { Linking, Modal, Text, TouchableOpacity, View } from "react-native";
-import useData from "../../context/DataProvider";
+import { Text, TouchableOpacity, View } from "react-native";
 import InfoBox from "../infobox/InfoBox";
 
 const Header = () => {
 	const navigation = useNavigation();
-	const { setTitle, title } = useData();
 	const handleHomePress = () => {
 		navigation.navigate("HomeScreen" as never);
-		setTitle("Home");
 	};
 	const [modal, showModal] = useState(false);
 	const toggleModal = () => showModal((modal) => !modal);
@@ -31,14 +28,9 @@ const Header = () => {
 			<TouchableOpacity style={{ paddingLeft: 20 }} onPress={handleHomePress}>
 				<FontAwesome5 name="home" size={40} color="black" />
 			</TouchableOpacity>
-			<Text style={{ fontSize: 30 }}>{title}</Text>
+			<Text style={{ fontSize: 30 }}>Kharcha</Text>
 			<TouchableOpacity style={{ paddingRight: 30 }}>
-				<Entypo
-					name="info-with-circle"
-					size={40}
-					color="black"
-					onPress={toggleModal}
-				/>
+				<Entypo name="info-with-circle" size={40} color="black" onPress={toggleModal} />
 			</TouchableOpacity>
 			<InfoBox {...infoProps} />
 		</View>

@@ -1,16 +1,17 @@
 import { Entypo, FontAwesome } from "@expo/vector-icons";
-import { Linking, Modal, Text, TouchableOpacity, View } from "react-native";
+import { Dimensions, Linking, Modal, Text, TouchableOpacity, View } from "react-native";
 
 interface Props {
 	modal: boolean;
 	toggleModal: () => void;
 }
 const InfoBox = ({ modal, toggleModal }: Props) => {
+	const leftOverWidth = Dimensions.get("window").width - 300;
 	return (
 		<Modal animationType="slide" visible={modal} transparent={true}>
 			<View
 				style={{
-					marginHorizontal: 50,
+					marginHorizontal: leftOverWidth / 2,
 					backgroundColor: "lightgrey",
 					alignItems: "center",
 					height: 200,
@@ -21,10 +22,7 @@ const InfoBox = ({ modal, toggleModal }: Props) => {
 					borderWidth: 5,
 				}}
 			>
-				<TouchableOpacity
-					style={{ alignSelf: "flex-end", margin: 10 }}
-					onPress={toggleModal}
-				>
+				<TouchableOpacity style={{ alignSelf: "flex-end", margin: 10 }} onPress={toggleModal}>
 					<Entypo name="squared-cross" size={30} color="black" />
 				</TouchableOpacity>
 				<View
@@ -43,12 +41,8 @@ const InfoBox = ({ modal, toggleModal }: Props) => {
 				</View>
 				<View style={{ flexDirection: "row", marginTop: 20 }}>
 					<Text style={{ fontSize: 20 }}>Visit </Text>
-					<TouchableOpacity
-						onPress={() => Linking.openURL("https://purplevarun.github.io")}
-					>
-						<Text style={{ fontWeight: "bold", fontSize: 20 }}>
-							purplevarun.github.io
-						</Text>
+					<TouchableOpacity onPress={() => Linking.openURL("https://purplevarun.github.io")}>
+						<Text style={{ fontWeight: "bold", fontSize: 20 }}>purplevarun.github.io</Text>
 					</TouchableOpacity>
 				</View>
 			</View>

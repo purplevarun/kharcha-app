@@ -1,6 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
 import { Text, TouchableOpacity, View } from "react-native";
-import useData from "../../context/DataProvider";
 
 interface Props {
 	name: string;
@@ -9,7 +8,6 @@ interface Props {
 
 const Trip = (props: Props) => {
 	const navigation = useNavigation();
-	const { setTitle } = useData();
 
 	const getName = (tripName: string) => {
 		if (tripName.length <= 10) {
@@ -27,7 +25,6 @@ const Trip = (props: Props) => {
 				tripCreated: props.created,
 			} as never
 		);
-		setTitle(`${getName(props.name)} Trip`);
 	};
 	return (
 		<TouchableOpacity
