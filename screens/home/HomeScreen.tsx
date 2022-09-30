@@ -5,6 +5,7 @@ import AllTrips from "../../major-components/alltrips/AllTrips";
 import AddButton from "../../minor-components/addbtn/AddButton";
 import Input from "../../minor-components/input/Input";
 import TodaysDate from "../../minor-components/todaysdate/TodaysDate";
+import { appBackgroundColor } from "../../theme";
 
 const HomeScreen = () => {
 	const [input, setInput] = useState(false);
@@ -28,7 +29,7 @@ const HomeScreen = () => {
 			contentContainerStyle={{
 				alignItems: "center",
 				minHeight: 1000,
-				backgroundColor: "white",
+				backgroundColor: appBackgroundColor,
 			}}
 		>
 			<TodaysDate />

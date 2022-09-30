@@ -1,5 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { Text, TouchableOpacity, View } from "react-native";
+import { appBackgroundColor, tripBackgroundColor } from "../../theme";
 
 interface Props {
 	name: string;
@@ -31,13 +32,16 @@ const Trip = (props: Props) => {
 			style={{
 				width: 300,
 				height: 60,
-				backgroundColor: "#98AFC7",
+				backgroundColor: tripBackgroundColor,
 				marginTop: 20,
 				display: "flex",
 				flexDirection: "row",
 				justifyContent: "space-between",
 				alignItems: "center",
 				paddingHorizontal: 20,
+				borderRadius: 8,
+				borderColor: "black",
+				borderWidth: 3,
 			}}
 			onPress={handlePress}
 		>

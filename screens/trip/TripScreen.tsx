@@ -4,6 +4,7 @@ import saveItem from "../../helpers/saveItem";
 import AllExpenses from "../../major-components/allexpenses/AllExpenses";
 import AddButton from "../../minor-components/addbtn/AddButton";
 import Input2 from "../../minor-components/input/Input2";
+import { appBackgroundColor } from "../../theme";
 
 interface Props {
 	route: {
@@ -48,7 +49,7 @@ const TripScreen = (props: Props) => {
 			contentContainerStyle={{
 				alignItems: "center",
 				minHeight: 1060,
-				backgroundColor: "white",
+				backgroundColor: appBackgroundColor,
 			}}
 		>
 			<View style={{ height: 20 }}></View>

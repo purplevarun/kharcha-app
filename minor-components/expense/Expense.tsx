@@ -1,4 +1,5 @@
 import { Text, View } from "react-native";
+import { expenseBackgroundColor } from "../../theme";
 
 interface Props {
 	amount: number;
@@ -11,15 +12,17 @@ const Expense = (props: Props) => {
 		<View
 			style={{
 				width: 300,
-				height: 90,
-				backgroundColor: "#36454F",
+				height: 60,
+				backgroundColor: expenseBackgroundColor,
 				marginTop: 20,
 				display: "flex",
 				flexDirection: "column",
-				justifyContent: "space-between",
+				justifyContent: "center",
 				alignItems: "center",
-				paddingHorizontal: 20,
-				paddingBottom: 10,
+				paddingHorizontal: 10,
+				borderColor: "black",
+				borderWidth: 3,
+				borderRadius: 8,
 			}}
 		>
 			<View
@@ -28,11 +31,10 @@ const Expense = (props: Props) => {
 					flexDirection: "row",
 					alignItems: "center",
 					justifyContent: "space-between",
-					marginVertical: 10,
 				}}
 			>
-				<Text style={{ color: "white", fontSize: 30 }}>{props.amount}</Text>
-				<Text style={{ color: "white" }}>{props.reason}</Text>
+				<Text style={{ color: "red", fontSize: 20, fontWeight: "bold" }}>{props.amount}</Text>
+				<Text style={{ color: "white" }}>{props.reason.substring(0,25)}</Text>
 			</View>
 			<View>
 				<Text style={{ color: "white" }}>{props.created}</Text>

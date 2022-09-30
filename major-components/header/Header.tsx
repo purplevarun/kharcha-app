@@ -2,6 +2,7 @@ import { Entypo, FontAwesome, FontAwesome5 } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
+import { appBackgroundColor } from "../../theme";
 import InfoBox from "../infobox/InfoBox";
 
 const Header = () => {
@@ -22,13 +23,14 @@ const Header = () => {
 				justifyContent: "space-between",
 				alignItems: "center",
 				borderBottomColor: "black",
-				borderBottomWidth: 1,
+				borderBottomWidth: 5,
+				backgroundColor:appBackgroundColor
 			}}
 		>
 			<TouchableOpacity style={{ paddingLeft: 20 }} onPress={handleHomePress}>
 				<FontAwesome5 name="home" size={40} color="black" />
 			</TouchableOpacity>
-			<Text style={{ fontSize: 30 }}>Kharcha</Text>
+			<Text style={{ fontSize: 30 }}>Kharcha App</Text>
 			<TouchableOpacity style={{ paddingRight: 30 }}>
 				<Entypo name="info-with-circle" size={40} color="black" onPress={toggleModal} />
 			</TouchableOpacity>
